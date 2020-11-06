@@ -62,6 +62,24 @@ template<typename system_t, typename state_t>
 
 }
 
+template<typename system_t, typename state_t>
+    void integrate(system_t deriv, state_t & data, double tmin, double tmax, double dt)
+{
+    const int nsteps = (tmax-tmin)/dt;
+    std::ofstream fout("reactors.txt");
+    
+    for (int ii = 0; ii <= nsteps; ++ii) {
+        double t = tmin + ii*dt;
+        fout << t << "\t"
+             << data[0] << "\t"
+             << data[1] << "\t"
+             << data[2] << "\t"
+             << data[3] << "\t"
+             << "\n";
+        //euler(fderiv, y, t, H);
+        rk4(deriv, data, t, dt);
+    }
 
+}
 
 #endif // __INTEGRATION_H_
