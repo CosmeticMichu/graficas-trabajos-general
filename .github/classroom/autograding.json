@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "quaternion compilation",
+      "setup": "",
+      "run": "make quaternion.x",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "reactors compilation",
+      "setup": "",
+      "run": "make reactors.x",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    }
+  ]
+}
